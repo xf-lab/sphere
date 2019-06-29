@@ -14,8 +14,7 @@
     let ADD = 0.01;
     
     let createSphere = function() {
-        let geometry = new THREE.SphereGeometry(5, 30, 30, 0, Math.PI, 
-                                                            0, Math.PI / 2);
+        let geometry = new THREE.SphereGeometry(5, 30, 30, 0);
         
         let material = new THREE.MeshBasicMaterial({color: 0xffffff,
                                                    wireframe: true});
@@ -51,8 +50,9 @@
     
     // main animation loop - calls every 50-60 ms.
     let mainLoop = function() {
-        sphere.rotation.x += ADD;
-       // sphere.rotation.y += ADD;
+        //sphere.rotation.x += ADD;
+        sphere.rotation.y += ADD;
+        //sphere.rotation.z += 0.0001;
         renderer.render(scene, camera);
         requestAnimationFrame(mainLoop);
     };
